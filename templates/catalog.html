@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Catalog{% endblock %}
+
+{% block content %}
+    <h2>Bringing the calories</h2>
+    <p>Thoughtfully prepare your health crisis of choice by choosing from our catalogue of delicacies.</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Pic</th>
+            <th scope="col">Info</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for product in product_list %}
+
+            <tr>
+                <td>
+                    <img class="catalog-pic" src="/static/{{ product.pic }}" alt="">
+                </td>
+                <td>
+                    <h4>{{ product.name }}</h4>
+                    <p>{{ product.description }}</p>
+                    {% if product.getConstituents.count == 0 %}
+                        <p>No constituents were defined.</p>
+                    {% endif %}
+
+                    {% for const in product.getConstituents.all %}
+                        <span class="badge badge-info">{{ const.name }}</span>
+                    {% endfor %}
+                </td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

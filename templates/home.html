@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Homepage{% endblock %}
+
+{% block content %}
+<h2>Welcome to you one-stop shop for sugary and fatty goodness</h2>
+    <p>Abandon all diet ye who dare enter here</p>
+    <img class="home-pic" src="{% static "img/fatty-cake.jpg" %}" alt="fattycake">
+    <h2>The rules</h2>
+    <ul>
+        <li>Fruit is something to decorate cakes with.</li>
+        <li>Chicken counts as a vegetable</li>
+        <li>When in doubt; add butter</li>
+        <li>When still in doubt; add sugar</li>
+        <li>Lifting food to your mouth and chewing counts as exercise</li>
+        <li>Bacon builds good bodies</li>
+        <li>We love animals. But we just prefer them prepared, buttered and ready to eat.</li>
+    </ul>
+{% endblock %}
